@@ -42,16 +42,11 @@ pre {
   white-space: pre;
 }
 
-#result {
+pre {
   text-align: left;
   width: 90%;
   background-color: #24232d;
   color: #25c2a0;
   padding: 15px;
   overflow: scroll;
-}
-
-#result span {
-  display: block;
-  padding: 10px;
 }

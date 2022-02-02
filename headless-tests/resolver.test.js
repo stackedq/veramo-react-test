@@ -47,4 +47,22 @@ describe("React App", () => {
       await expect(parsedResult).toMatchObject(resultSnapshot);
     });
   });
+
+  it("should get didDoc data based on invalid URL", async () => {
+    let resultSnapshot = {
+      didDocumentMetadata: {},
+      didResolutionMetadata: {
+        error: "invalidDid",
+        message:
+          "Not a valid did:ethr: rinkeby:0x6acf3bb1ef0ee8459de2bc2bd9d91532062a730",
+      },
+      didDocument: null,
+    };
+
+    await page.waitForSelector("#invalid-result").then(async (element) => {
+      let result = await element.evaluate((el) => el.textContent);
+      let parsedResult = JSON.parse(result);
+      await expect(parsedResult).toMatchObject(resultSnapshot);
+    });
+  });
 });
