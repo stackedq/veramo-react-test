@@ -50,3 +50,8 @@ pre {
   padding: 15px;
   overflow: scroll;
 }
+
+#result span {
+  display: block;
+  padding: 10px;
+}

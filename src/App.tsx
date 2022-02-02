@@ -1,30 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
-import { agent } from './veramo/setup'
+import { agent } from "./veramo/setup";
 
 function App() {
-  const [didDoc, setDidDoc] = useState<any>()
+  const [didDoc, setDidDoc] = useState<any>(null);
 
   const resolve = async () => {
     const doc = await agent.resolveDid({
-      didUrl: 'did:ethr:rinkeby:0x6acf3bb1ef0ee84559de2bc2bd9d91532062a730',
-    })
+      didUrl: "did:ethr:rinkeby:0x6acf3bb1ef0ee84559de2bc2bd9d91532062a730",
+    });
+    console.log(doc);
 
-    setDidDoc(doc)
-  }
+    setDidDoc(doc);
+  };
 
   useEffect(() => {
-    resolve()
-  }, [])
+    resolve();
+  }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <pre id="result">{didDoc && JSON.stringify(didDoc, null, 2)}</pre>
+        {didDoc && <pre id="result">{JSON.stringify(didDoc, null, 2)}</pre>}
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
