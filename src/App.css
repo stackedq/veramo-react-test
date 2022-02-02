@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 14px;
   color: white;
 }
 
@@ -35,4 +35,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+pre {
+  font-family: monospace;
+  white-space: pre;
+}
+
+#result {
+  text-align: left;
+  width: 90%;
+  background-color: #24232d;
+  color: #25c2a0;
+  padding: 15px;
+  overflow: scroll;
 }

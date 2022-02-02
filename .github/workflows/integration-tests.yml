@@ -1,0 +1,11 @@
+name: Automated browser tests
+on: push
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Install deps
+        run: PUPPETEER_PRODUCT=firefox yarn install
+      - name: Run tests
+        run: yarn test:integration
