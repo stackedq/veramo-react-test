@@ -7,7 +7,5 @@ jobs:
       - uses: actions/checkout@master
       - name: Install deps
         run: PUPPETEER_PRODUCT=firefox npm install
-      - name: Install ubuntu dependencies
-        run: apt-get install packagekit-gtk3-module
       - name: Run tests
         run: npm run test:integration
