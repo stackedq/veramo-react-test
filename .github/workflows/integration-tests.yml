@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Install deps
-        run: PUPPETEER_PRODUCT=firefox npm install
+        run: PUPPETEER_PRODUCT=firefox yarn install
       - name: Run tests
-        run: npm run test:integration
+        run: yarn test:integration
